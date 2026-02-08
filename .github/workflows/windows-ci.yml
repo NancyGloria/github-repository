@@ -1,0 +1,22 @@
+name: Windows CI Basic
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  windows-job:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run PowerShell command
+        run: |
+          Write-Output "Hello from GitHub Actions on Windows"
+          Write-Output "Workflow ran successfully"
