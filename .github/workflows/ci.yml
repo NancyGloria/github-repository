@@ -1,0 +1,22 @@
+  name: Dummy CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  demo-job:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run dummy command
+        run: |
+          echo "GitHub Actions is working!"
+          echo "This is a dummy CI workflow"
